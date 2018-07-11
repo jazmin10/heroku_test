@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Add Character</title>
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	<!-- jQuery -->
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Add a character</h1>
+
+		<form>
+		  <div class="form-group">
+		    <label for="route-input">Route Name:</label>
+		    <input type="text" class="form-control" id="route-input">
+		  </div>
+		  <div class="form-group">
+		    <label for="name-input">Name:</label>
+		    <input type="text" class="form-control" id="name-input">
+		  </div>
+		  <div class="form-group">
+		    <label for="role-input">Role:</label>
+		    <input type="text" class="form-control" id="role-input">
+		  </div>
+		  <div class="form-group">
+		    <label for="age-input">Age:</label>
+		    <input type="text" class="form-control" id="age-input">
+		  </div>
+		  <div class="form-group">
+		    <label for="points-input">Force Points:</label>
+		    <input type="text" class="form-control" id="points-input">
+		  </div>
+		  <button class="btn btn-primary" id="submit-btn">Submit</button>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		$("#submit-btn").click(function(event) {
+
+			event.preventDefault();
+
+			// Store information as an object
+			var newCharInfo = {
+				routeName: $("#route-input").val().trim(),
+				name: $("#name-input").val().trim(),
+				role: $("#role-input").val().trim(),
+				age: parseInt($("#age-input").val().trim()),
+				forcePoints: parseInt($("#points-input").val().trim())
+			};
+
+			// Clear form fields
+			$("#route-input").val("");
+			$("#name-input").val("");
+			$("#role-input").val("");
+			$("#age-input").val("");
+			$("#points-input").val("");
+
+			// Add new character to the list of characters
+			$.ajax({
+				url: "/api/new",
+				method: "POST",
+				data: newCharInfo
+			}).then(function(value) {
+				console.log(value);
+			});
+			
+		});
+	</script>
+
+</body>
+</html>
