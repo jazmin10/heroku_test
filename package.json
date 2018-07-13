@@ -1,7 +1,7 @@
 {
-  "name": "starwars",
+  "name": "code_practice_hw13",
   "version": "1.0.0",
-  "description": "",
+  "description": "friend finder app",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -12,6 +12,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazmin10/code_practice_hw13.git"
+  },
+  "author": "jazmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jazmin10/code_practice_hw13/issues"
+  },
+  "homepage": "https://github.com/jazmin10/code_practice_hw13#readme"
 }
