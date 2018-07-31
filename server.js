@@ -7,7 +7,8 @@ var Note = require("./models/Note.js");
 
 var PORT = process.env.PORT || 3000;
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/week18Populater");
+// mongoose.connect("mongodb://localhost/week18Populater");
+mongoose.connect("mongodb://heroku_cm9s0cxc:h13ki9d25okmehi74k300cgh7u@ds153637.mlab.com:53637/heroku_cm9s0cxc");
 
 var app = express();
 var db = mongoose.connection;
